@@ -51,7 +51,7 @@ async def on_message(message):
     print(message.created_at) # Prelievo del momento di invio del messaggio
 
     if str(message.author)=='User#0000':
-        registro=re.split(': |\n',message.content)
+        registro=re.split(': |\n',message.content) # Ogni dato veniva differenziato dai due punti, che quindi sono stati usati per indicare il separatore (come il ; nei csv)
         sheet = googleClient.open("File").worksheet("Foglio")
         insert(registro, sheet)
 
